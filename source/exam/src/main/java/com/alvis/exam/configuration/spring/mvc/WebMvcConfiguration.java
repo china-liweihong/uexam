@@ -1,7 +1,6 @@
 package com.alvis.exam.configuration.spring.mvc;
 
 import com.alvis.exam.configuration.property.SystemConfig;
-import com.alvis.exam.configuration.spring.interceptor.WebContextInterceptor;
 import com.alvis.exam.configuration.spring.wx.TokenHandlerInterceptor;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,6 @@ import java.util.List;
 @AllArgsConstructor
 public class WebMvcConfiguration extends WebMvcConfigurationSupport {
 
-    private final WebContextInterceptor webContextInterceptor;
     private final TokenHandlerInterceptor tokenHandlerInterceptor;
     private final SystemConfig systemConfig;
 
@@ -38,8 +36,6 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(webContextInterceptor);
-
         List<String> securityIgnoreUrls = systemConfig.getWx().getSecurityIgnoreUrls();
         String[] ignores = new String[securityIgnoreUrls.size()];
         registry.addInterceptor(tokenHandlerInterceptor)
