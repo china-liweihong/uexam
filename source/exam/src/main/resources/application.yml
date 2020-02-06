@@ -54,6 +54,9 @@ pagehelper:
 
 #mybatis datasource default HikariPool
 spring:
+  resources:
+    chain:
+      cache: true
   session:
     store-type: redis
   datasource:
