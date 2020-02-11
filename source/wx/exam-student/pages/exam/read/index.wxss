@@ -91,9 +91,6 @@
   border-bottom: 3px double red;
 }
 
-.ueditor-p {
-  display: inline !important;
-}
 
 .question-answer-result {
   text-align: center;
