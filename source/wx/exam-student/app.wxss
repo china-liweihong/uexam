@@ -34,6 +34,9 @@ page {
   border-bottom: 3px double red;
 }
 
+.ueditor-p {
+  display: inline !important;
+}
 
 .exam-hidden {
   display: none;
